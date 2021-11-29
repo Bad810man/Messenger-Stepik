@@ -13,7 +13,6 @@ namespace MyMessenger
             Console.WriteLine(output);
             Message deserializeMsg = JsonConvert.DeserializeObject<Message>(output);
             Console.WriteLine(deserializeMsg);
-
         }
     }
 }
