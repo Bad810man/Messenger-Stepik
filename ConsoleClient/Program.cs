@@ -1,12 +1,14 @@
 ﻿using System;
+using ConsoleMessenger;
 
 namespace MyMessenger
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Message msg = new Message();
+            Console.WriteLine(msg.ToString());
         }
     }
 }
