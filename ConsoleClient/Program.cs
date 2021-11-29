@@ -1,5 +1,6 @@
 ﻿using System;
 using ConsoleMessenger;
+using Newtonsoft.Json;
 
 namespace MyMessenger
 {
@@ -7,8 +8,12 @@ namespace MyMessenger
     {
         static void Main(string[] args)
         {
-            Message msg = new Message();
-            Console.WriteLine(msg.ToString());
+            Message msg = new Message("Valera", "Hello", DateTime.UtcNow);
+            string output = JsonConvert.SerializeObject(msg);
+            Console.WriteLine(output);
+            Message deserializeMsg = JsonConvert.DeserializeObject<Message>(output);
+            Console.WriteLine(deserializeMsg);
+
         }
     }
 }
